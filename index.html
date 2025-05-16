@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Podo</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  
+</head>
+<body>
+  <div id="app">
+    <h1 class="title">PODO</h1>
+    <!-- Background image applied via CSS -->
+
+    <div class="todo">
+    </div>
+    <div class="todo-container">
+      <input type="text" id="todoInput" placeholder="Tambah tugas..." class="todo-input" />
+      <button id="addTodoBtn" class="pixel-button">Tambah</button>
+      <ul id="todoList" class="todo-list"></ul>
+    </div>
+
+
+    <div class="timer-container">
+      <img src="assets/frame.png" class="timer-frame" />
+      <div class="timer-display" id="timer">25:00</div>
+    </div>
+
+    <div class="controls">
+      <button class="pixel-button-start" id="startBtn"></button>
+      <button class="pixel-button-stop" id="stopBtn"></button>
+    </div>
+  </div>
+
+  <script src="timer.js"></script>
+<script>
+  const path = require("path");
+
+  // Path konversi agar bisa digunakan di CSS
+  const bgPath = `file://${path.join(__dirname, 'assets', 'bg.jpg').replace(/\\/g, '/')}`;
+  const bg2Path = `file://${path.join(__dirname, 'assets', 'background2.png').replace(/\\/g, '/')}`;
+  const startPath = `file://${path.join(__dirname, 'assets', 'start.png').replace(/\\/g, '/')}`;
+  const stopPath = `file://${path.join(__dirname, 'assets', 'stop.png').replace(/\\/g, '/')}`;
+
+  // Terapkan background
+  document.body.style.backgroundImage = `url("${bgPath}")`;
+  document.querySelector('.todo-container').style.backgroundImage = `url("${bg2Path}")`;
+  document.getElementById('startBtn').style.backgroundImage = `url("${startPath}")`;
+  document.getElementById('stopBtn').style.backgroundImage = `url("${stopPath}")`;
+</script>
+
+</body>
+</html>
